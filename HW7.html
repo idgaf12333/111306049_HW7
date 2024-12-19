@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Homework 7</title>
+  <style>
+    /* 通用樣式 */
+    body {
+      background-color: #eeede1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      font-family: Arial, sans-serif;
+      margin: 0;
+    }
+
+    .main-container {
+      width: 900px;
+      background-color: #ffffff;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      display: flex;
+      flex-direction: row;
+      border-radius: 8px;
+    }
+
+    /* 左側面板樣式 */
+    .left-panel {
+      width: 330px;
+      height: 1150px;
+      display: flex;
+      flex-direction: column;
+      background-color: #f7f7f7;
+    }
+
+    .photo-panel {
+      height: 50%;
+      background-image: url('photo.jpg');
+      background-size: cover;
+      background-position: center;
+      border-bottom: 2px solid #ccc;
+    }
+
+    .text-content {
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .text-content ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .text-content li {
+      margin-bottom: 5px;
+    }
+
+    .nccu-icon {
+      width: 50px;
+      height: auto;
+      align-self: center;
+      margin-top: 20px;
+    }
+
+    /* 右側面板樣式 */
+    .right-panel {
+      width: 540px;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* 區塊樣式 */
+    .section {
+      margin-bottom: 200px;
+    }
+
+    .section h2 {
+      border-bottom: 2px solid #ccc;
+      padding-bottom: 5px;
+      margin-bottom: 10px;
+      font-size: 18px;
+    }
+
+    /* 教育區塊樣式 */
+    .timeline .entry {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 10px;
+    }
+
+    .year {
+      font-weight: bold;
+    }
+
+    /* 作業清單樣式 */
+    .homework-list ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .homework-list li {
+      margin-bottom: 5px;
+    }
+
+    .homework-list a {
+      text-decoration: none;
+      color: #007bff;
+    }
+
+    .homework-list a:hover {
+      text-decoration: underline;
+    }
+
+    /* 喜愛音樂區塊樣式 */
+    .music-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+    }
+
+    .music-grid img {
+      width: 100%;
+      height: auto;
+      border-radius: 5px;
+      transition: transform 0.3s ease;
+    }
+
+    .music-grid img:hover {
+      transform: scale(1.1);
+    }
+
+    .note {
+      font-size: 12px;
+      color: #555;
+      margin-top: 10px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="main-container">
+    <!-- 左側面板 -->
+    <div class="left-panel">
+      <div class="photo-panel"></div>
+      <div class="text-content">
+        <h2 id="name-label">111306049</h2>
+        <button id="edit-name-btn">Edit</button>
+        <p><strong>About Me</strong> </p>
+        <p>A student major in MIS.</p>
+        <div>
+          <p><strong>Contact</strong></p>
+          <ul>
+            <li>Email: 111306049@nccu.edu.tw</li>
+          </ul>
+        </div>
+        <img src="nccu icon.jpg" alt="NCCU Icon" class="nccu-icon">
+      </div>
+    </div>
+
+    <!-- 右側面板 -->
+    <div class="right-panel">
+      <!-- 教育區塊 -->
+      <div class="section education">
+        <h2>Education</h2>
+        <div class="timeline">
+          <div class="entry">
+            <span class="year">2022</span>
+            <span class="description">Started University</span>
+          </div>
+          <div class="entry">
+            <span class="year">2024</span>
+            <span class="description">still studying</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 作業清單區塊 -->
+      <div class="section homework-list">
+        <h2>Homework List</h2>
+        <ul>
+          <li>HW1 - <a href="https://github.com/idgaf12333/111306049-HW1" target="_blank">https://github.com/idgaf12333/111306049-HW1</a></li><br>
+          <li>HW4 - <a href="https://github.com/idgaf12333/111306049_HW4" target="_blank">https://github.com/idgaf12333/111306049_HW4</a></li>
+        </ul>
+      </div>
+
+      <!-- 喜愛音樂區塊 -->
+      <div class="section favorite-music">
+        <h2>Favorite Music</h2>
+        <div class="music-grid">
+          <a href="https://www.youtube.com/watch?v=3L3Me4JXVqE&t=1s" target="_blank">
+            <img src="youtube.jpg" alt="Album 1">
+
+          </a>
+          <a href="https://music-link2.com" target="_blank">
+            <img src="youtube.jpg" alt="Album 2">
+          </a>
+          <a href="https://music-link3.com" target="_blank">
+            <img src="youtube.jpg" alt="Album 3">
+          </a>
+          <a href="https://music-link4.com" target="_blank">
+            <img src="youtube.jpg" alt="Album 4">
+          </a>
+        </div>
+        <div class="music-grid" id="music-grid">
+          <!-- Dynamic music items -->
+        </div>
+        <button id="add-music-btn">Add Music</button>
+        <p class="note">These songs are my favorite</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    let isEditing = false;
+
+    document.getElementById("edit-name-btn").addEventListener("click", () => {
+      const nameLabel = document.getElementById("name-label");
+      const editButton = document.getElementById("edit-name-btn");
+
+      if (isEditing) {
+        const inputField = document.getElementById("name-input");
+        nameLabel.textContent = inputField.value;
+        nameLabel.style.display = "block";
+        inputField.remove();
+        editButton.textContent = "Edit";
+      } else {
+        const inputField = document.createElement("input");
+        inputField.type = "text";
+        inputField.id = "name-input";
+        inputField.value = nameLabel.textContent;
+        nameLabel.style.display = "none";
+        nameLabel.parentNode.insertBefore(inputField, editButton);
+        editButton.textContent = "Save";
+      }
+
+      isEditing = !isEditing;
+    });
+
+    document.getElementById("add-music-btn").addEventListener("click", () => {
+      const form = document.createElement("div");
+      form.innerHTML = `
+        <input type="text" id="music-link" placeholder="Music Link">
+        <input type="text" id="music-name" placeholder="Music Name">
+        <button id="submit-music">Submit</button>
+      `;
+
+      document.querySelector(".favorite-music").appendChild(form);
+
+      document.getElementById("submit-music").addEventListener("click", () => {
+        const link = document.getElementById("music-link").value;
+        const name = document.getElementById("music-name").value;
+
+        if (link && name) {
+          const grid = document.getElementById("music-grid");
+          const newMusic = document.createElement("a");
+          newMusic.href = link;
+          newMusic.target = "_blank";
+          newMusic.innerHTML = `<img src="youtube.jpg" alt="${name}"><p>${name}</p>`;
+          grid.appendChild(newMusic);
+          form.remove();
+        } else {
+          alert("Please fill out both fields.");
+        }
+      });
+    });
+  </script>
+</body>
+</html>
